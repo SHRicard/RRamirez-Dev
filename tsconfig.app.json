@@ -6,6 +6,19 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@hooks": ["hooks/index"],
+      "@atoms": ["components/atoms/index"],
+      "@molecules": ["components/molecules/index"],
+      "@organisms": ["components/organisms/index"],
+      "@templates": ["components/templates/index"],
+      "@utils": ["utils/index"],
+      "@layouts": ["layouts/index"],
+      "@store": ["store/index"],
+      "@themeSlice": ["store/themeSlice"],
+      "@theme": ["theme/index"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
