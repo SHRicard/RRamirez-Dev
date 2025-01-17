@@ -1,5 +1,4 @@
-
-import { useThemeMode } from "./hooks"
+import { useThemeMode } from "@hooks"
 import { Box, Button, CssBaseline, ThemeProvider, Typography } from '@mui/material'
 
 function App() {

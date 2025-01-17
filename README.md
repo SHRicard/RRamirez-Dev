@@ -26,7 +26,6 @@ Este es mi nuevo portafolio profesional para el año 2025, diseñado para destac
    Configuración de alias para evitar rutas largas y facilitar el desarrollo.
 
 ## 🛠️ Configuración
-
 1. Clona este repositorio:  
    ```bash
    git clone https://github.com/tu-usuario/rramirez-dev-portfolio-2025.git
