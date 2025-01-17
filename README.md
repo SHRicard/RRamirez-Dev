@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# RRamirez-Dev Portfolio 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi nuevo portafolio profesional para el año 2025, diseñado para destacar mis proyectos y habilidades como desarrollador web. Construido con un enfoque moderno, utilizando tecnologías avanzadas y patrones de diseño escalables.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **TypeScript**: Tipado estático para garantizar código más robusto y mantenible.
+- **React**: Biblioteca para la construcción de interfaces de usuario dinámicas.
+- **Redux Toolkit**: Manejo de estado global simplificado y eficiente.
+- **Material-UI (MUI)**: Componentes de interfaz de usuario modernos y personalizables.
+- **Arquitectura Atomic Design**: Organización de componentes basada en la metodología atómica para una mayor escalabilidad y reutilización.
+- **Alias en Importaciones**: Configuración de alias para simplificar y mejorar la organización de las rutas de importación.
 
-## Expanding the ESLint configuration
+## 🌟 Características Principales
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Diseño Modular**:  
+   Estructura basada en Atomic Design que divide los componentes en átomos, moléculas, organismos, plantillas y páginas. Esto asegura un desarrollo más limpio y organizado.
 
-- Configure the top-level `parserOptions` property like this:
+2. **Temas Personalizados**:  
+   Implementación de temas claro y oscuro, totalmente gestionados a través de Material-UI y Redux Toolkit.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Código Limpio y Escalable**:  
+   Uso de TypeScript para mejorar la calidad del código y reducir errores en tiempo de ejecución.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. **Importaciones Simplificadas**:  
+   Configuración de alias para evitar rutas largas y facilitar el desarrollo.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🛠️ Configuración
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clona este repositorio:  
+   ```bash
+   git clone https://github.com/tu-usuario/rramirez-dev-portfolio-2025.git
+   cd rramirez-dev-portfolio-2025
