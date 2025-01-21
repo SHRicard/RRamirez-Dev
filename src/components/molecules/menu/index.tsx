@@ -4,14 +4,15 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { Container, Toolbar } from '@mui/material';
+import { Container, Toolbar, useTheme } from '@mui/material';
 import { miniNavigation, navigation } from "@utils"
 import { useThemeMode } from "@hooks"
 import { CustomGraphy, CustomBox, CustomIcon, CustomDivider } from "@atoms"
 
-
 export const AccountMenu = () => {
     const { toggleThemeMode } = useThemeMode()
+    const theme = useTheme();
+
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -24,7 +25,9 @@ export const AccountMenu = () => {
 
 
     return (
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{
+            backgroundColor: theme.palette.primary.main,
+        }}>
             <Toolbar disableGutters>
                 <CustomBox
                     sx={{
@@ -33,23 +36,16 @@ export const AccountMenu = () => {
                         width: { xs: '50%', md: 'auto' },
                     }}
                 >
-                    <CustomIcon type={"AdbIcon"} sx={{ width: 32, height: 32, display: { md: 'auto' }, mr: 1 }} />
+                    <CustomIcon type={"AdbIcon"} sx={{ color: theme.palette.primary.dark, width: 32, height: 32, display: { md: 'auto' }, mr: 1 }} />
                     <CustomGraphy
                         variant="h6"
-                        noWrap
-                        component="a"
+
                         onClick={toggleThemeMode}
                         sx={{
-                            mr: 2,
-                            display: { xs: 'flex', sm: 'flex', md: 'flex' },
-                            fontFamily: 'monospace',
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        {"<R.Ramirez/>"}
                     </CustomGraphy>
                 </CustomBox>
 
@@ -64,7 +60,7 @@ export const AccountMenu = () => {
                 >
                     {
                         navigation.map((item, index) => {
-                            return <CustomGraphy sx={{ minWidth: 100 }} key={index}>{item}</CustomGraphy>
+                            return <CustomGraphy variant="h6" sx={{ minWidth: 100, }} key={index}>{item}</CustomGraphy>
                         })
                     }
                 </CustomBox>
@@ -87,7 +83,7 @@ export const AccountMenu = () => {
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                         >
-                            <CustomIcon type={"Avatar"} sx={{ width: 32, height: 32 }}>M</CustomIcon>
+                            <CustomIcon type={"Avatar"} sx={{ width: 32, height: 32, }}>R</CustomIcon>
                         </IconButton>
                     </Tooltip>
                 </CustomBox>
@@ -152,6 +148,6 @@ export const AccountMenu = () => {
 
                 </Menu>
             </Toolbar>
-        </Container>
+        </Container >
     );
 };

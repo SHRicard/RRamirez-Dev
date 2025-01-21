@@ -8,6 +8,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   overflow: hidden;
+  font-family: "Smooch Sans", sans-serif;
 }
 
 #root {

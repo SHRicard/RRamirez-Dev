@@ -1,11 +1,12 @@
 import { useThemeMode } from "@hooks";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { AccountMenu } from "@molecules";
+import { AccountMenu, Footer } from "@molecules";
 import { CustomBox } from "@atoms"
 
 
 function App() {
   const { currentTheme } = useThemeMode();
+
 
   return (
     <ThemeProvider theme={currentTheme}>
@@ -16,8 +17,6 @@ function App() {
           width: "100vw",
           display: "flex",
           flexDirection: "column",
-          bgcolor: "background.default",
-          color: "text.primary",
         }}
       >
         {/* Menu flotante */}
@@ -31,8 +30,6 @@ function App() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: "center",
-            bgcolor: "primary.main",
-            color: "primary.contrastText",
             zIndex: 10,
             width: "99%",
             borderRadius: 0.8,
@@ -63,15 +60,8 @@ function App() {
         {/* Footer */}
         <CustomBox
           component="footer"
-          sx={{
-            width: "100%",
-            bgcolor: "secondary.main",
-            color: "secondary.contrastText",
-            padding: 1,
-            textAlign: "center",
-          }}
         >
-          <p>&copy; 2025 RRamirez-Dev. Todos los derechos reservados.</p>
+          <Footer />
         </CustomBox>
       </CustomBox>
     </ThemeProvider>

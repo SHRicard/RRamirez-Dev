@@ -1,5 +1,5 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
+import { Typography, useTheme } from "@mui/material";
 
 interface CustomTypography {
     children: React.ReactNode;
@@ -18,16 +18,21 @@ export const CustomGraphy: React.FC<CustomTypography> = ({
     onClick,
     sx,
 }) => {
+    const theme = useTheme();
     return (
         <Typography
-            variant={variant}
             noWrap={noWrap}
             component={component}
             onClick={onClick}
-            sx={sx}
+            sx={{
+                fontFamily: theme?.typography?.fontFamily,
+                fontWeight: theme?.typography[variant]?.fontWeight,
+                fontSize: theme?.typography[variant]?.fontSize,
+                ...sx
+            }}
         >
             {children}
-        </Typography>
+        </Typography >
     );
 };
 

@@ -1,4 +1,5 @@
+import { Footer } from "./footer"
 import { AccountMenu } from "./menu"
 
 
-export { AccountMenu }
+export { AccountMenu, Footer }
