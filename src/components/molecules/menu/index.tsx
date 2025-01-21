@@ -1,17 +1,13 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { Container, Toolbar } from '@mui/material';
-import AdbIcon from '@mui/icons-material/Adb';
 import { miniNavigation, navigation } from "@utils"
 import { useThemeMode } from "@hooks"
+import { CustomGraphy, CustomBox, CustomIcon, CustomDivider } from "@atoms"
 
 
 export const AccountMenu = () => {
@@ -30,15 +26,15 @@ export const AccountMenu = () => {
     return (
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-                <Box
+                <CustomBox
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
                         width: { xs: '50%', md: 'auto' },
                     }}
                 >
-                    <AdbIcon sx={{ display: { md: 'auto' }, mr: 1 }} />
-                    <Typography
+                    <CustomIcon type={"AdbIcon"} sx={{ width: 32, height: 32, display: { md: 'auto' }, mr: 1 }} />
+                    <CustomGraphy
                         variant="h6"
                         noWrap
                         component="a"
@@ -54,11 +50,11 @@ export const AccountMenu = () => {
                         }}
                     >
                         LOGO
-                    </Typography>
-                </Box>
+                    </CustomGraphy>
+                </CustomBox>
 
                 {/* Menu Items Section */}
-                <Box
+                <CustomBox
                     sx={{
                         justifyContent: "center",
                         textAlign: 'center',
@@ -68,13 +64,13 @@ export const AccountMenu = () => {
                 >
                     {
                         navigation.map((item, index) => {
-                            return <Typography sx={{ minWidth: 100 }} key={index}>{item}</Typography>
+                            return <CustomGraphy sx={{ minWidth: 100 }} key={index}>{item}</CustomGraphy>
                         })
                     }
-                </Box>
+                </CustomBox>
 
                 {/* Avatar Section */}
-                <Box
+                <CustomBox
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -91,10 +87,10 @@ export const AccountMenu = () => {
                             aria-haspopup="true"
                             aria-expanded={open ? 'true' : undefined}
                         >
-                            <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                            <CustomIcon type={"Avatar"} sx={{ width: 32, height: 32 }}>M</CustomIcon>
                         </IconButton>
                     </Tooltip>
-                </Box>
+                </CustomBox>
 
                 {/* Account Menu */}
                 <Menu
@@ -137,14 +133,23 @@ export const AccountMenu = () => {
                     {miniNavigation.map((item, index) => (
                         <React.Fragment key={index}>
                             <MenuItem onClick={handleClose}>
-                                <ListItemIcon>
-                                    {item.icon} {item.label}
+                                <ListItemIcon
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        minWidth: 0, // Ajusta el ancho mínimo para que no sea mayor al ícono
+                                        mr: 1, // Margen derecho para separar del texto (opcional)
+                                    }}
+                                >
+                                    {item.icon}
                                 </ListItemIcon>
+                                {item.label}
                             </MenuItem>
-                            {index === miniNavigation.length - 2 && <Divider />}
+                            {index === miniNavigation.length - 2 && <CustomDivider />}
                         </React.Fragment>
-                    ))
-                    }
+                    ))}
+
                 </Menu>
             </Toolbar>
         </Container>

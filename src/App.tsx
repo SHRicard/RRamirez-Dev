@@ -1,6 +1,8 @@
 import { useThemeMode } from "@hooks";
-import { Box, CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { AccountMenu } from "@molecules";
+import { CustomBox } from "@atoms"
+
 
 function App() {
   const { currentTheme } = useThemeMode();
@@ -8,7 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
-      <Box
+      <CustomBox
         sx={{
           minHeight: "100vh",
           width: "100vw",
@@ -19,7 +21,7 @@ function App() {
         }}
       >
         {/* Menu flotante */}
-        <Box
+        <CustomBox
           component="header"
           sx={{
             position: "fixed",
@@ -37,10 +39,10 @@ function App() {
           }}
         >
           <AccountMenu />
-        </Box>
+        </CustomBox>
 
         {/* Main */}
-        <Box
+        <CustomBox
           component="main"
           sx={{
             flex: 1,
@@ -56,10 +58,10 @@ function App() {
           {/* Contenido dinámico */}
           <h1>Bienvenido a mi Portafolio</h1>
           <p>Este es el contenido principal de la aplicación.</p>
-        </Box>
+        </CustomBox>
 
         {/* Footer */}
-        <Box
+        <CustomBox
           component="footer"
           sx={{
             width: "100%",
@@ -70,8 +72,8 @@ function App() {
           }}
         >
           <p>&copy; 2025 RRamirez-Dev. Todos los derechos reservados.</p>
-        </Box>
-      </Box>
+        </CustomBox>
+      </CustomBox>
     </ThemeProvider>
   );
 }

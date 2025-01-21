@@ -1,6 +1,4 @@
-import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
+import { CustomIcon } from "@atoms"
 
 export interface IMiniNav {
     label: string;
@@ -8,11 +6,11 @@ export interface IMiniNav {
 }
 
 export const miniNavigation: IMiniNav[] = [
-    { label: "Home", icon: <PersonAdd fontSize="small" sx={{ mx: 1 }} /> },
-    { label: "Educación y Certificaciones", icon: <Settings fontSize="small" sx={{ mx: 1 }} /> },
-    { label: "Experiencia", icon: <Logout fontSize="small" sx={{ mx: 1 }} /> },
-    { label: "Sobre mí", icon: <Logout fontSize="small" sx={{ mx: 1 }} /> },
-    { label: "Blog", icon: <Logout fontSize="small" sx={{ mx: 1 }} /> },
-    { label: "Descarga de CV", icon: <Logout fontSize="small" sx={{ mx: 1 }} /> },
+    { label: "Home", icon: <CustomIcon type={"PersonAdd"} sx={{ mx: 1, width: 20, height: 20, }} /> },
+    { label: "Educación y Certificaciones", icon: <CustomIcon type={"PersonAdd"} fontSize="small" sx={{ mx: 1, width: 20, height: 20, }} /> },
+    { label: "Experiencia", icon: <CustomIcon type={"PersonAdd"} sx={{ mx: 1, width: 20, height: 20, }} /> },
+    { label: "Sobre mí", icon: <CustomIcon type={"PersonAdd"} sx={{ mx: 1, width: 20, height: 20, }} /> },
+    { label: "Blog", icon: <CustomIcon type={"PersonAdd"} sx={{ mx: 1, width: 20, height: 20, }} /> },
+    { label: "Descarga de CV", icon: <CustomIcon type={"PersonAdd"} sx={{ mx: 1, width: 20, height: 20, }} /> },
 ];
 export const navigation = ["Home", "Sobre mí", "Experiencia"]
