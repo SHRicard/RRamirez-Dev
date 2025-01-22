@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -60,11 +61,22 @@ export const AccountMenu = () => {
                 >
                     {
                         navigation.map((item, index) => {
-                            return <CustomGraphy variant="h6" sx={{ minWidth: 100, }} key={index}>{item}</CustomGraphy>
+                            return (
+                                <CustomGraphy
+                                    variant="h4"
+                                    sx={{
+                                        minWidth: 100,
+                                    }}
+                                    key={item.label}
+                                >
+                                    <Link to={item.path} key={index} style={{ textDecoration: "none", color: theme.palette.primary.contrastText }}>
+                                        {item.label}
+                                    </Link>
+                                </CustomGraphy>
+                            );
                         })
                     }
                 </CustomBox>
-
                 {/* Avatar Section */}
                 <CustomBox
                     sx={{
@@ -128,20 +140,22 @@ export const AccountMenu = () => {
                 >
                     {miniNavigation.map((item, index) => (
                         <React.Fragment key={index}>
-                            <MenuItem onClick={handleClose}>
-                                <ListItemIcon
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        minWidth: 0, // Ajusta el ancho mínimo para que no sea mayor al ícono
-                                        mr: 1, // Margen derecho para separar del texto (opcional)
-                                    }}
-                                >
-                                    {item.icon}
-                                </ListItemIcon>
-                                {item.label}
-                            </MenuItem>
+                            <Link to={item.path} key={index} style={{ textDecoration: "none", color: theme.palette.primary.contrastText }}>
+                                <MenuItem onClick={handleClose}>
+                                    <ListItemIcon
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            minWidth: 0, // Ajusta el ancho mínimo para que no sea mayor al ícono
+                                            mr: 1, // Margen derecho para separar del texto (opcional)
+                                        }}
+                                    >
+                                        {item.icon}
+                                    </ListItemIcon>
+                                    {item.label}
+                                </MenuItem>
+                            </Link>
                             {index === miniNavigation.length - 2 && <CustomDivider />}
                         </React.Fragment>
                     ))}

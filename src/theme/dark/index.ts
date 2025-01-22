@@ -28,6 +28,10 @@ export const darkTheme = createTheme({
             fontSize: '1.75rem',
             fontWeight: 500,
         },
+        h4: {
+            fontSize: '1.3rem',
+            fontWeight: 600,
+        },
         body1: {
             fontSize: '1rem',
             fontWeight: 400,
