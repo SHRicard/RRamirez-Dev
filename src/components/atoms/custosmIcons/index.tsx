@@ -5,15 +5,46 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import AdbIcon from '@mui/icons-material/Adb';
+import HomeIcon from '@mui/icons-material/Home';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import PersonPinIcon from '@mui/icons-material/PersonPin';
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+
 
 interface CustomIcon extends SvgIconProps {
-    type: 'Avatar' | 'PersonAdd' | 'Settings' | 'Logout' | 'AdbIcon';
+    type:
+    'Home'
+    | 'Education'
+    | 'Avatar'
+    | 'Experience'
+    | 'About'
+    | 'Download'
+    | 'PersonAdd'
+    | 'Settings'
+    | 'Logout'
+    | 'AdbIcon';
     sx?: object;
 }
 
 export const CustomIcon: React.FC<CustomIcon> = ({ type, sx, ...props }) => {
     let IconComponent: React.ElementType;
     switch (type) {
+        case 'Home':
+            IconComponent = HomeIcon;
+            break;
+        case 'Experience':
+            IconComponent = ConstructionIcon;
+            break;
+        case 'Education':
+            IconComponent = AutoStoriesIcon;
+            break;
+        case 'About':
+            IconComponent = PersonPinIcon;
+            break;
+        case 'Download':
+            IconComponent = DownloadForOfflineIcon;
+            break;
         case 'Avatar':
             IconComponent = Avatar;
             break;
